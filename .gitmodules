@@ -1,0 +1,3 @@
+[submodule "GameLibSandboxUnity/Assets/Libs/GameLib"]
+	path = GameLibSandboxUnity/Assets/Libs/GameLib
+	url = ../gamelib.git
