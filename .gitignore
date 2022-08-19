@@ -1,0 +1,16 @@
+GameLibSandboxUnity/Library/
+GameLibSandboxUnity/Temp/
+GameLibSandboxUnity/Logs/
+GameLibSandboxUnity/UserSettings/
+GameLibSandboxUnity/Assembly-CSharp.csproj
+GameLibSandboxUnity/Assembly-CSharp-Editor.csproj
+GameLibSandboxUnity/GameLibSandboxUnity.sln
+GameLibSandboxUnity/.vsconfig
+GameLibSandboxUnity/.vs/GameLibSandboxUnity/v16/.suo
+GameLibSandboxUnity/obj/
+Build/
+PackagesDistributives/
+GameLibSandboxUnity/Assembly-CSharp-firstpass.csproj
+/GameLibSandboxUnity/PlayFab.csproj
+/GameLibSandboxUnity/PlayFabSDKEditor.csproj
+/Builds
