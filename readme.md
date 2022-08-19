@@ -1,3 +1,5 @@
+![logo](Images/repository-open-graph-gamelibsandbox.png)
+
 # GameLibSandbox
 Sandbox for testing and experimenting with my different libraries:
   * GameLib
