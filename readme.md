@@ -1,19 +1,12 @@
-# GameLibSandbox песочница gamelib
+# GameLibSandbox
+Sandbox for testing and experimenting with my different libraries:
+  * GameLib
+  * TowerGenerator
+  * VersionHistory
 
-## Описание
-
-* gamelibsandbox является примером подключения инфраструктуры gamelib к игре. С точки зрения gamelib gamelibsandbox является игрой.
-* содержит тесты для геймлибы и для дополнительных модулей
-* содержит примеры использоваония для геймлибы и для дополнительных модулей
-* содержит подключенными все дополнительные сабмодули для геймлибы. Например: towergenerator, versionhistory. Это позволяет протестировать отсутствие конфликтов между разными сабмодулями. 
-* gamelibsandbox всегда содержит последние версии всех сабмодулей и все их зависимости синхронизируются именно здесь. 
-* дополнительные сабмодули (такие как versionhistory, towergenerator) не являются самостоятельными проектам и работают только подключенными к игре
-
-## Подключенные submodules и зависимости
-* **gamelib**
-* **versionhistory**
-* **towergenerator**
-* NCalc-1.3.8 ( https://github.com/ncalc/ncalc )
-* DOTween
-* Lean
-* PathCreator
+Also contains experiments and examples of third parties libraries such as:
+  * DoTween
+  
+Also contains custom unit tests for GameLib and some other libraries.
+Integration of all libraries to GameLibSandbox project is also an example of how to integrate them to your game. 
+GameLibsSandbox always contains most recent version of modules and libraries. Unity version is also most actual.
