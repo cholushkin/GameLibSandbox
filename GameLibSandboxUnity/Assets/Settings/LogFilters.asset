@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a93499f9895654f997ac8008440fc8, type: 3}
   m_Name: LogFilters
   m_EditorClassIdentifier: 
-  PassFilters:
-  - Game*
+  PassFilters: []
   RejectFilters: []
