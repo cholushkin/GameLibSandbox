@@ -14,6 +14,6 @@
 [submodule "GameLibSandboxUnity/Assets/Libs/towergenerator"]
 	path = GameLibSandboxUnity/Assets/Libs/towergenerator
 	url = https://github.com/cholushkin/towergenerator.git
-[submodule "GameLibSandboxUnity/Assets/Libs/ProBuilder/uimgui"]
-	path = GameLibSandboxUnity/Assets/Libs/ProBuilder/uimgui
+[submodule "GameLibSandboxUnity/Assets/Libs/uimgui"]
+	path = GameLibSandboxUnity/Assets/Libs/uimgui
 	url = https://github.com/cholushkin/uimgui.git

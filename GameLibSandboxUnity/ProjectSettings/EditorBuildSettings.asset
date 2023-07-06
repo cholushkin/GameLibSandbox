@@ -6,23 +6,23 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Sandbox/Scenes/Shareable/Initialization.unity
+    path: Assets/Scenes/Shareable/Initialization.unity
     guid: 6ccdd1f588f521d45a612cc766806d57
   - enabled: 1
-    path: Assets/Sandbox/Scenes/Sandbox.unity
+    path: Assets/Scenes/Sandbox.unity
     guid: 20565e5ab98240646b01b3e4a75145a5
   - enabled: 1
-    path: Assets/Sandbox/Scenes/UnitTest.unity
+    path: Assets/Scenes/UnitTest.unity
     guid: 4c8938c7e49cac94896d3b19f83999d1
   - enabled: 1
-    path: Assets/Sandbox/Scenes/Shareable/System.unity
+    path: Assets/Scenes/Shareable/System.unity
     guid: 4db021f3bc89274468b1c71ee37a4c6a
   - enabled: 1
-    path: Assets/Sandbox/Scenes/Shareable/Debug.unity
+    path: Assets/Scenes/Shareable/Debug.unity
     guid: 933cf04aa52d32443a237f142c57574d
   - enabled: 1
-    path: Assets/Sandbox/Scenes/Shareable/Analytics.unity
-    guid: 70eb328c620040143b1fa790143c8f4e
+    path: Assets/Sandbox/Cases/CaseProbuilder/Scenes/ProBuilderRndShapes.unity
+    guid: b90e7bc0e2d142347bc5b8cd75292d8e
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 30e9e39892922dd4b890e15976278ad4,
       type: 2}
