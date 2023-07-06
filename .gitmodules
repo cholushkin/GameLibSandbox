@@ -1,3 +1,16 @@
 [submodule "GameLibSandboxUnity/Assets/Libs/GameLib"]
 	path = GameLibSandboxUnity/Assets/Libs/GameLib
 	url = ../gamelib.git
+[submodule "GameLibSandboxUnity/Assets/Libs/qonsole"]
+	path = GameLibSandboxUnity/Assets/Libs/qonsole
+	url = https://github.com/cholushkin/qonsole.git
+[submodule "GameLibSandboxUnity/Assets/Libs/xLua"]
+	path = GameLibSandboxUnity/Assets/Libs/xLua
+	url = https://github.com/cholushkin/xLua.git
+	branch = unity
+[submodule "GameLibSandboxUnity/Assets/Libs/VersionHistory"]
+	path = GameLibSandboxUnity/Assets/Libs/VersionHistory
+	url = https://github.com/cholushkin/VersionHistory.git
+[submodule "GameLibSandboxUnity/Assets/Libs/towergenerator"]
+	path = GameLibSandboxUnity/Assets/Libs/towergenerator
+	url = https://github.com/cholushkin/towergenerator.git
