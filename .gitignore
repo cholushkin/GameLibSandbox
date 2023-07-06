@@ -14,3 +14,5 @@ GameLibSandboxUnity/Assembly-CSharp-firstpass.csproj
 /GameLibSandboxUnity/PlayFab.csproj
 /GameLibSandboxUnity/PlayFabSDKEditor.csproj
 /Builds
+/GameLibSandboxUnity/Unity.ProBuilder.Examples.csproj
+/GameLibSandboxUnity/Assembly-CSharp-Editor-firstpass.csproj
