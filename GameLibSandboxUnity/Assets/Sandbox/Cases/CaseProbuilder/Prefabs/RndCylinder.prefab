@@ -47,6 +47,7 @@ MonoBehaviour:
   Seed: -1
   SpawnOnAwake: 1
   PivotPercent: {x: 0, y: 0, z: 0}
+  Material: {fileID: 2100000, guid: 2d78f1c59cf8da04f89f77abc95a8163, type: 2}
   Radius:
     From: 0.2
     To: 1.2

@@ -8,6 +8,7 @@ public abstract class RandomShape : MonoBehaviour
     public long Seed;
     public bool SpawnOnAwake;
     public Vector3 PivotPercent;
+    public Material Material;
     protected IPseudoRandomNumberGenerator _rnd;
     private ProBuilderMesh _mesh;
     private Bounds _bounds;
@@ -28,7 +29,7 @@ public abstract class RandomShape : MonoBehaviour
         // Set bounds and material
         {
             MeshRenderer mr = _mesh.gameObject.GetComponent<MeshRenderer>();
-            mr.material = new Material(Shader.Find("Diffuse"));
+            mr.material = Material;
             _bounds = mr.bounds;
         }
         _mesh.transform.SetParent(transform);

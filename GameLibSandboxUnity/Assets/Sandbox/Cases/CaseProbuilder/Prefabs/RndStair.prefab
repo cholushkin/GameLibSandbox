@@ -47,6 +47,7 @@ MonoBehaviour:
   Seed: -1
   SpawnOnAwake: 1
   PivotPercent: {x: 0, y: 0, z: 0}
+  Material: {fileID: 2100000, guid: bf83498e314e1404fb967bc1fa03b5dc, type: 2}
   Steps:
     From: 2
     To: 16
