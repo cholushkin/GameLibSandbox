@@ -25,17 +25,10 @@ public class CasesManager : MonoBehaviour
         CurrentCaseIndex = caseIndex;
 
         // Destroy old scene
-        if (_currentScene != null)
-        {
-            Log.Print(LogChecker.Level.Verbose, $"Unloading scene {_currentScene.name}");
-            SceneManager.UnloadSceneAsync(_currentScene.name);
-        }
-
-        // Load new scene
+        var oldCurScene = _currentScene;
         _currentScene = CaseScenes[CurrentCaseIndex];
-        SceneManager.LoadScene(_currentScene.name, LoadSceneMode.Additive);
-        //SceneManager.SetActiveScene(SceneManager.GetSceneByName(_currentScene.name));
-        print(SceneManager.GetActiveScene().name);
+
+        SceneLoader.Instance.Replace(_currentScene, oldCurScene, true);
     }
 
     [Button]

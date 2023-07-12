@@ -850,8 +850,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 164d5699441d6af48b29b02fcf9d5335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: ProBuilder show random shapes showcase
-  Description: ProBuilder show random shapes showcase
+  Name: ProBuilder random shapes showcase
+  Description: ProBuilder random shapes showcase
 --- !u!4 &235533047
 Transform:
   m_ObjectHideFlags: 0

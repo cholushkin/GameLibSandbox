@@ -20,9 +20,17 @@ MonoBehaviour:
       - {fileID: 102900000, guid: 4db021f3bc89274468b1c71ee37a4c6a, type: 3}
       - {fileID: 102900000, guid: 933cf04aa52d32443a237f142c57574d, type: 3}
       AdditiveScenes: []
+      MakeActive: {fileID: 0}
   - Scene: {fileID: 102900000, guid: 4c8938c7e49cac94896d3b19f83999d1, type: 3}
     Dependencies:
       ShareableScenes:
       - {fileID: 102900000, guid: 4db021f3bc89274468b1c71ee37a4c6a, type: 3}
       - {fileID: 102900000, guid: 933cf04aa52d32443a237f142c57574d, type: 3}
       AdditiveScenes: []
+      MakeActive: {fileID: 0}
+  WildcardDependencies: []
+  DefaultDependencies:
+    ShareableScenes:
+    - {fileID: 102900000, guid: 4db021f3bc89274468b1c71ee37a4c6a, type: 3}
+    AdditiveScenes: []
+    MakeActive: {fileID: 0}

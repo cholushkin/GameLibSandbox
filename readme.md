@@ -12,5 +12,8 @@ Also contains experiments and examples of third parties libraries such as:
   * ProBuilder
   
 Also contains custom unit tests for GameLib and some other libraries.
-Integration of all libraries to GameLibSandbox project is also an example of how to integrate them to your game and check out how all of them live together. 
+Integration of all libraries to GameLibSandbox project is also an example of how to integrate them to your game and check out how all of them can live together. 
 GameLibsSandbox always contains most recent version of modules and libraries. Unity version is also most actual.
+
+
+Full lists of libs used: [Libs README.md](GameLibSandboxUnity/Assets/Libs/README.md).
