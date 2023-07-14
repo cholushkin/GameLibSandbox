@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -67,9 +67,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -123,50 +120,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &87919783
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 87919785}
-  - component: {fileID: 87919784}
-  m_Layer: 0
-  m_Name: Console
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &87919784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 87919783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 757b0580ff065104a88e39b85b048640, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &87919785
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 87919783}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &95505872
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,8 +196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 164d5699441d6af48b29b02fcf9d5335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: CaseImGUI
-  Description: ShowDemoWindow example
+  Name: CaseImGUIShowDemoWindow
+  Description: 
 --- !u!4 &412246181
 Transform:
   m_ObjectHideFlags: 0
@@ -444,144 +397,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!1 &1556477170
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1556477172}
-  - component: {fileID: 1556477171}
-  m_Layer: 6
-  m_Name: ThreePanelLayoutExample
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1556477171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1556477170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04e71b5c2f21ef24db7c61d347758afb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel1Div: 0.2
-  Panel2Div: 0.5
-  Panel3Div: 0.3
-  StateNodes:
-  - Caption: test
-    SubquadTextures:
-    - {fileID: 2800000, guid: b9a4e029ae47d8f448d170ffa1ad43ae, type: 3}
-    - {fileID: 2800000, guid: b9a4e029ae47d8f448d170ffa1ad43ae, type: 3}
-    - {fileID: 2800000, guid: b9a4e029ae47d8f448d170ffa1ad43ae, type: 3}
-    - {fileID: 2800000, guid: b9a4e029ae47d8f448d170ffa1ad43ae, type: 3}
-    Selector: 0
-    CurrentMode: 2
-  - Caption: test
-    SubquadTextures:
-    - {fileID: 2800000, guid: b9a4e029ae47d8f448d170ffa1ad43ae, type: 3}
-    - {fileID: 2800000, guid: b9a4e029ae47d8f448d170ffa1ad43ae, type: 3}
-    - {fileID: 2800000, guid: b9a4e029ae47d8f448d170ffa1ad43ae, type: 3}
-    - {fileID: 2800000, guid: b9a4e029ae47d8f448d170ffa1ad43ae, type: 3}
-    Selector: 3
-    CurrentMode: 0
-  - Caption: test
-    SubquadTextures:
-    - {fileID: 2800000, guid: b9a4e029ae47d8f448d170ffa1ad43ae, type: 3}
-    - {fileID: 2800000, guid: b9a4e029ae47d8f448d170ffa1ad43ae, type: 3}
-    - {fileID: 2800000, guid: b9a4e029ae47d8f448d170ffa1ad43ae, type: 3}
-    - {fileID: 2800000, guid: b9a4e029ae47d8f448d170ffa1ad43ae, type: 3}
-    Selector: 0
-    CurrentMode: 0
-  - Caption: test
-    SubquadTextures:
-    - {fileID: 2800000, guid: b9a4e029ae47d8f448d170ffa1ad43ae, type: 3}
-    - {fileID: 2800000, guid: b9a4e029ae47d8f448d170ffa1ad43ae, type: 3}
-    - {fileID: 2800000, guid: b9a4e029ae47d8f448d170ffa1ad43ae, type: 3}
-    - {fileID: 2800000, guid: b9a4e029ae47d8f448d170ffa1ad43ae, type: 3}
-    Selector: 0
-    CurrentMode: 1
-  Selection: 0
-  SelectionColor: {r: 0.101960786, g: 0.3764706, b: 0.7490196, a: 1}
-  SubquadStates:
-  - Texture: {fileID: 2800000, guid: b9a4e029ae47d8f448d170ffa1ad43ae, type: 3}
-    Loading: 0
-    Model: sd1
-    SecondsGenerated: 12
-    Seed: 2423
-    Error: 0
-    ErrorText: 
-  - Texture: {fileID: 2800000, guid: b9a4e029ae47d8f448d170ffa1ad43ae, type: 3}
-    Loading: 0
-    Model: sd1
-    SecondsGenerated: 12
-    Seed: 2423
-    Error: 1
-    ErrorText: 434
-  - Texture: {fileID: 2800000, guid: b9a4e029ae47d8f448d170ffa1ad43ae, type: 3}
-    Loading: 0
-    Model: sd1
-    SecondsGenerated: 12
-    Seed: 2423
-    Error: 0
-    ErrorText: 
-  - Texture: {fileID: 2800000, guid: b9a4e029ae47d8f448d170ffa1ad43ae, type: 3}
-    Loading: 1
-    Model: sd1
-    SecondsGenerated: 12
-    Seed: 2423
-    Error: 0
-    ErrorText: 
-  RefreshButtonTexture: {fileID: 2800000, guid: 602b72d4617c3694aa94419fc1b68e04,
-    type: 3}
-  PromptText: abcd abcd abcdabcd abcd abcdabcd abcd abcdabcd abcd abcdabcd abcd abcdabcd
-    abcd abcdabcd abcd abcdabcd abcd abcdabcd abcd abcdabcd abcd abcdabcd abcd abcdabcd
-    abcd abcdabcd abcd abcd
-  CurrentState: 0
-  DebugInfo: 0
-  GeneratorEnabledButtonColor: {r: 0.30588236, g: 0.11372549, b: 0.4745098, a: 1}
-  GeneratorDisabledButtonColor: {r: 0.26524743, g: 0.10524209, b: 0.4056604, a: 0.5686275}
-  Txt2ImgGenerators:
-  - Name: 123
-    Enabled: 1
-  - Name: 123
-    Enabled: 0
-  - Name: 123
-    Enabled: 0
-  - Name: 123
-    Enabled: 1
-  Img2ImgGenerators:
-  - Name: wrw
-    Enabled: 1
-  - Name: wrw
-    Enabled: 1
-  - Name: wrw
-    Enabled: 1
-  - Name: wrw
-    Enabled: 1
---- !u!4 &1556477172
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1556477170}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.9462204, y: -0.24920559, z: 2.748475}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1613226416
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,7 +549,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2098312520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -747,8 +562,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f7e55d54eede42459ec52fabbd53824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShowPlotWindowSampleOnStart: 0
-  ShowNodesWindowSampleOnStart: 0
+  ShowPlotWindowSampleOnStart: 1
+  ShowNodesWindowSampleOnStart: 1
   ShowDemoWindowSampleOnStart: 1
   _barValues:
   - 1
@@ -796,7 +611,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1024104416429026331
 Transform:
