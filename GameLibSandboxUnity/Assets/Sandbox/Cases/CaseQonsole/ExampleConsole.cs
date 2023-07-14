@@ -18,8 +18,8 @@ public class ExampleConsole : MonoBehaviour
     [Button]
     void SetScene()
     {
-        Qonsole.Qonsole.Instance.DoCommand("SpawnZombie('Bob', {0,0,0})");
-        Qonsole.Qonsole.Instance.DoCommand("SpawnZombie('Bill', {1,1,1}, 12)");
+        //Qonsole.Qonsole.Instance.DoCommand("SpawnZombie('Bob', {0,0,0})");
+        //Qonsole.Qonsole.Instance.DoCommand("SpawnZombie('Bill', {1,1,1}, 12)");
     }
 
 
@@ -32,7 +32,7 @@ namespace Qonsole
 {
     public static partial class QonsoleCommands
     {
-        [ConsoleMethod("Zombobox.CreateZombie", "SpawnZombie", "Create zombie")]
+        //[ConsoleMethod("Zombobox.CreateZombie", "SpawnZombie", "Create zombie")]
         public static void CreateObject(string name, Vector3 pos, float health = 10f)
         {
             var gObj = new GameObject(name);

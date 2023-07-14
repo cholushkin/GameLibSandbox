@@ -19,3 +19,6 @@ GameLibSandboxUnity/Assembly-CSharp-firstpass.csproj
 /GameLibSandboxUnity/Xlua.Core.Editor.csproj
 /GameLibSandboxUnity/Xlua.Core.csproj
 /GameLibSandboxUnity/Unity.ProBuilder.Examples.Editor.csproj
+/GameLibSandboxUnity/imgui.ini
+/GameLibSandboxUnity/UImGui.Editor.csproj
+/GameLibSandboxUnity/UImGui.csproj
