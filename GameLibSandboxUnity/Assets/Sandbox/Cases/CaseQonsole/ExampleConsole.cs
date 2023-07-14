@@ -6,12 +6,7 @@ using UnityEngine;
 
 public class ExampleConsole : MonoBehaviour
 {
-    [ResizableTextArea] public string LuaScript;
-    [Button]
-    void RunScript()
-    {
-        LuaSingleton.Instance.Script.DoString(LuaScript);
-    }
+
 
 
 
@@ -32,13 +27,18 @@ namespace Qonsole
 {
     public static partial class QonsoleCommands
     {
-        //[ConsoleMethod("Zombobox.CreateZombie", "SpawnZombie", "Create zombie")]
-        public static void CreateObject(string name, Vector3 pos, float health = 10f)
+        [ConsoleMethod("Zombobox.CreateZombie", "sz", "Create zombie")]
+        public static void CreateZombie(string name, Vector3 pos, float health = 10f)
         {
             var gObj = new GameObject(name);
             gObj.transform.position = pos;
             var zombie = gObj.AddComponent<Zombie>();
             zombie.Health = health;
+        }
+
+        [ConsoleMethod("Zombobox.SelectZombie", "selzb", "Select zombie by name", "Zombie name")]
+        public static void SelectZombie(string name)
+        {
         }
     }
 }
