@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using MoonSharp.Interpreter;
 using NaughtyAttributes;
-using NaughtyAttributes.Test;
 using UnityEngine;
 
 
@@ -15,6 +12,12 @@ public class ExampleShareObject : MonoBehaviour
     public string LuaScript = @"    
 		zombie1.SayHi()
         zombie2.SayHi()
+
+        print('zombie 1 '..zombie1.Health)
+        zombie1.Health = 999
+        print('zombie 1 '..zombie1.Health)
+        print('zombie 1 '..zombie1.Health)
+        print(type(ExampleShareObject.Zombie))
 	";
 
     [MoonSharpUserData]
@@ -22,11 +25,13 @@ public class ExampleShareObject : MonoBehaviour
     {
         public float Health;
         public string Name;
+        public static int ZombieCounter;
 
         public Zombie(string name = "nameless", float health = 10f)
         {
             Name = name;
             Health = health;
+            ZombieCounter++;
         }
 
         public void ReceiveDamage(float damage)
@@ -51,6 +56,13 @@ public class ExampleShareObject : MonoBehaviour
         // Pass an instance of the class to the script in a global
         _script.Globals["zombie1"] = new Zombie("Bill");
         _script.Globals["zombie2"] = new Zombie("Bob");
+
+        Debug.Log("Registered types:");
+        var registeredTypes = UserData.GetRegisteredTypes();
+        foreach (var registeredType in registeredTypes)
+        {
+            Debug.Log(registeredType);
+        }
 
     }
 

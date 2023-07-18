@@ -368,7 +368,7 @@ namespace MoonSharp.Interpreter
 		/// </returns>
 		public static ScriptRuntimeException ConvertObjectFailed(object obj)
 		{
-			return new ScriptRuntimeException("cannot convert clr type {0}", obj.GetType());
+			return new ScriptRuntimeException("cannot convert CLR type {0}", obj.GetType());
 		}
 
 		/// <summary>
@@ -381,7 +381,7 @@ namespace MoonSharp.Interpreter
 		/// </returns>
 		public static ScriptRuntimeException ConvertObjectFailed(DataType t)
 		{
-			return new ScriptRuntimeException("cannot convert a {0} to a clr type", t.ToString().ToLowerInvariant());
+			return new ScriptRuntimeException("cannot convert a {0} to a CLR type", t.ToString().ToLowerInvariant());
 		}
 
 		/// <summary>
@@ -395,7 +395,7 @@ namespace MoonSharp.Interpreter
 		/// </returns>
 		public static ScriptRuntimeException ConvertObjectFailed(DataType t, Type t2)
 		{
-			return new ScriptRuntimeException("cannot convert a {0} to a clr type {1}", t.ToString().ToLowerInvariant(), t2.FullName);
+			return new ScriptRuntimeException("cannot convert a {0} to a CLR type {1}", t.ToString().ToLowerInvariant(), t2.FullName);
 		}
 
 		/// <summary>
@@ -409,7 +409,7 @@ namespace MoonSharp.Interpreter
 		/// </returns>
 		public static ScriptRuntimeException UserDataArgumentTypeMismatch(DataType t, Type clrType)
 		{
-			return new ScriptRuntimeException("cannot find a conversion from a MoonSharp {0} to a clr {1}", t.ToString().ToLowerInvariant(), clrType.FullName);
+			return new ScriptRuntimeException("cannot find a conversion from a MoonSharp {0} to a CLR {1}", t.ToString().ToLowerInvariant(), clrType.FullName);
 		}
 
 		/// <summary>

@@ -1,0 +1,2 @@
+-- lua autoexec file starts on game start
+print("Console ready")
