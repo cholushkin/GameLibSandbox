@@ -19,6 +19,25 @@ namespace Qonsole
 
     public static class ConsoleCommandsZombobox
     {
+        public enum Weapon
+        {
+            Gun,
+            Shotgun,
+            Rifle
+        }
+
+        [ConsoleMethod("Zombobox.PrintWeapon", "weapon", "Print weapon name"), UnityEngine.Scripting.Preserve]
+        public static void PrintWeapon(Weapon w)
+        {
+            if(w == Weapon.Gun)
+                Debug.Log("gun");
+            else if (w == Weapon.Shotgun)
+                Debug.Log("shotgun");
+            else if (w == Weapon.Rifle)
+                Debug.Log("rifle");
+        }
+
+
         [ConsoleMethod("Zombobox.CreateZombie", "sz", "Create zombie")]
         public static void CreateZombie(string name, Vector3 pos, float health = 10f)
         {

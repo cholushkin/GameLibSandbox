@@ -1,2 +1,7 @@
 -- lua autoexec file starts on game start
-print("Console ready")
+
+dofile('motd')
+
+print("Please type help() for the help")
+
+
