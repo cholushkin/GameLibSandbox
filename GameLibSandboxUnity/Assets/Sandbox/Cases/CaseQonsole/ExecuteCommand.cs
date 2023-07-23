@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ExecuteCommand : MonoBehaviour
 {
+    [Multiline]
     public string Code;
 
     [Button]

@@ -26,7 +26,10 @@ namespace Qonsole
             Rifle
         }
 
-        [ConsoleMethod("Zombobox.PrintWeapon", "weapon", "Print weapon name"), UnityEngine.Scripting.Preserve]
+        
+        // Example of: no description
+        // Example of: passing enum (in lua: Weapon.Gun )
+        [ConsoleMethod("Zombobox.PrintWeapon", "weapon", null), UnityEngine.Scripting.Preserve]
         public static void PrintWeapon(Weapon w)
         {
             if(w == Weapon.Gun)
@@ -38,7 +41,22 @@ namespace Qonsole
         }
 
 
-        [ConsoleMethod("Zombobox.CreateZombie", "sz", "Create zombie")]
+        [ConsoleMethod("Zombobox.Hit", "hit", "Hit the zombie")]
+        // Example of: default value
+        public static void HitZombie(string name, float hitPoint = 1f)
+        {
+            Debug.Log($"Hit zombie {name} by {hitPoint} hit points");
+            var zombie = FindZombie(name);
+            if (zombie == null)
+            {
+                return;
+            }
+            zombie.Health -= hitPoint;
+        }
+
+
+        [ConsoleMethod("Zombobox.CreateZombie", "cz", "Create zombie")]
+        // Example of: default value
         public static void CreateZombie(string name, Vector3 pos, float health = 10f)
         {
             var gObj = new GameObject(name);
@@ -47,9 +65,11 @@ namespace Qonsole
             zombie.Health = health;
         }
 
-        [ConsoleMethod("Zombobox.SelectZombie", "selzb", "Select zombie by name", "Zombie name")]
-        public static void SelectZombie(string name)
+
+        [ConsoleMethod("Zombobox.SetColor", "setcolor", "Set color to zombie")]
+        public static void SetColor(string name, Color clr)
         {
+
         }
 
         [ConsoleMethod("Zombobox.PrintState", "printz", "Print the state of zombobox")]
@@ -59,19 +79,27 @@ namespace Qonsole
             //Debug.Log($"MinZombies={ConsoleVariablesZombobox.MinZombies}");
         }
 
+        private static Zombie FindZombie(string name)
+        {
+            var gObj = GameObject.Find(name);
+            if (gObj == null)
+                return null;
+            return gObj.GetComponent<Zombie>();
+        }
+
 
 #if TEST_REGISTRATION_ERRORS
-        [ConsoleMethod("Zombobox.CreateZombie", "sz", "Create zombie")]
+        [ConsoleMethod("Zombobox.CreateZombie", "cz", "Create zombie")]
         public static void CreateZombieE1()
         {
         }
 
-        [ConsoleMethod("Zombobox.CreateZombie", "sz2", "Create zombie")]
+        [ConsoleMethod("Zombobox.CreateZombie", "cz2", "Create zombie")]
         public static void CreateZombieE2()
         {
         }
 
-        [ConsoleMethod("Zombobox.CreateZombie2", "sz", "Create zombie")]
+        [ConsoleMethod("Zombobox.CreateZombie2", "cz", "Create zombie")]
         public static void CreateZombieE3()
         {
         }

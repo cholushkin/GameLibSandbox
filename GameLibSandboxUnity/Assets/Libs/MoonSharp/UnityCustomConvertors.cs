@@ -1,3 +1,4 @@
+using System.Drawing.Printing;
 using MoonSharp.Interpreter;
 using UnityEngine;
 
@@ -5,7 +6,12 @@ namespace MoonSharp
 {
     public static class UnityCustomConvertors
     {
-        public static void RegisterUnityCustomConvertors()
+        public static void RegisterCustomConvertors()
+        {
+            RegisterScriptToClrCustomConversion();
+        }
+
+        public static void RegisterScriptToClrCustomConversion()
         {
             Script.GlobalOptions.CustomConverters.SetScriptToClrCustomConversion(DataType.Table, typeof(Color),
                 v => new Color(1f, 0, 0, 0));
