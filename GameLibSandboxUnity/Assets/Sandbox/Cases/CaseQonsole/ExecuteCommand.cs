@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ExecuteCommand : MonoBehaviour
 {
-    [Multiline]
+    [ResizableTextArea]
     public string Code;
 
     [Button]

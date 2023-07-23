@@ -1,5 +1,6 @@
 using System.Drawing.Printing;
 using MoonSharp.Interpreter;
+using MoonSharp.UnityWrapper;
 using UnityEngine;
 
 namespace MoonSharp
@@ -13,10 +14,23 @@ namespace MoonSharp
 
         public static void RegisterScriptToClrCustomConversion()
         {
+            // All conversions are from Lua to CS
+
             Script.GlobalOptions.CustomConverters.SetScriptToClrCustomConversion(DataType.Table, typeof(Color),
                 v => new Color(1f, 0, 0, 0));
 
+            // LuaVector3 -> Vector3
+            Script.GlobalOptions.CustomConverters.SetScriptToClrCustomConversion(DataType.UserData, typeof(Vector3), dv => UserDataToVector3(dv));
+
+            // string -> Color
             Script.GlobalOptions.CustomConverters.SetScriptToClrCustomConversion(DataType.String, typeof(Color), dv => ColorLiteralToColor(dv));
+        }
+
+        private static Vector3 UserDataToVector3(DynValue usrData)
+        {
+            var ud = usrData.UserData;
+            LuaVector3 lv3 = (LuaVector3) ud.Object;
+            return lv3.ToVector3();
         }
 
 
@@ -30,7 +44,7 @@ namespace MoonSharp
             }
             clrName = clrName.Trim().ToLower();
             
-            if(clrName == "red")
+            if (clrName == "red")
                 return Color.red;
             if (clrName == "green")
                 return Color.green;
