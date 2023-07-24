@@ -19,11 +19,32 @@ namespace MoonSharp
             Script.GlobalOptions.CustomConverters.SetScriptToClrCustomConversion(DataType.Table, typeof(Color),
                 v => new Color(1f, 0, 0, 0));
 
+            // table -> Vector3
+            Script.GlobalOptions.CustomConverters.SetScriptToClrCustomConversion(DataType.Table, typeof(Vector3), dv => TableToVector3(dv));
+
             // LuaVector3 -> Vector3
             Script.GlobalOptions.CustomConverters.SetScriptToClrCustomConversion(DataType.UserData, typeof(Vector3), dv => UserDataToVector3(dv));
 
             // string -> Color
             Script.GlobalOptions.CustomConverters.SetScriptToClrCustomConversion(DataType.String, typeof(Color), dv => ColorLiteralToColor(dv));
+        }
+
+        private static Vector3 TableToVector3(DynValue v3Table)
+        {
+            if (v3Table.Type != DataType.Table)
+            {
+                Debug.LogError($"Expecting table");
+                return Vector3.zero;
+            }
+            var table = v3Table.Table;
+            if (table.Length == 3)
+                return new Vector3((float)table.Get(1).Number, (float)table.Get(2).Number, (float)table.Get(2).Number);
+            if (table.Length == 2)
+                return new Vector3((float)table.Get(1).Number, (float)table.Get(2).Number, 0f);
+            if (table.Length == 1)
+                return new Vector3((float)table.Get(1).Number, 0f, 0f);
+            Debug.LogError($"Wrong table format for representing Vector3 : {v3Table.Table}");
+            return Vector3.zero;
         }
 
         private static Vector3 UserDataToVector3(DynValue usrData)

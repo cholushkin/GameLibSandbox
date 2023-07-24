@@ -6,7 +6,7 @@ using UnityEngine;
 // 1. Create wrapper for your type(proxy class) like LuaVector3
 // 2. Call YourType.RegisterWrapperType on your lua virtual machine (Script) 
 // 3. Add call inside UnityWrapperTypes.RegisterUnityWrapperTypes() for your type
-// 4. Add convertion to RegisterScriptToClrCustomConversion
+// 4. Add conversion to RegisterScriptToClrCustomConversion
 
 namespace MoonSharp.UnityWrapper
 {
@@ -14,6 +14,8 @@ namespace MoonSharp.UnityWrapper
     public class LuaVector3
     {
         private Vector3 _vector;
+
+        public static readonly LuaVector3 One = new LuaVector3(1f,1f,1f);
 
         public LuaVector3(float x = 0f, float y = 0f, float z = 0f)
         {
@@ -59,6 +61,17 @@ namespace MoonSharp.UnityWrapper
         public static void RegisterWrapperType(Script script)
         {
             LuaWrapperHelper.RegisterWrapperType<LuaVector3>(script, "Vector3", "LuaVector3");
+
+            // Register Vector3 constants
+            script.DoString("Vector3.One = Vector3(1.0, 1.0, 1.0)");
+            script.DoString("Vector3.Zero = Vector3(0.0, 0.0, 0.0)");
+            script.DoString("Vector3.NegativeInfinity = Vector3(-math.huge,-math.huge,-math.huge)");
+            script.DoString("Vector3.PositiveInfinity = Vector3(math.huge,math.huge,math.huge)");
+            script.DoString("Vector3.Down = Vector3(0.0, -1.0, 0.0)");
+            script.DoString("Vector3.Forward = Vector3(0.0, 0.0, 1.0)");
+            script.DoString("Vector3.Left = Vector3(-1.0, 0.0, 0.0)");
+            script.DoString("Vector3.Right = Vector3(1.0, 0.0, 0.0)");
+            script.DoString("Vector3.Up = Vector3(0.0, 1.0, 0.0)");
         }
     }
 
