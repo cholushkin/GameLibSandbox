@@ -37,12 +37,17 @@ namespace MoonSharp
                 return Vector3.zero;
             }
             var table = v3Table.Table;
-            if (table.Length == 3)
+            if (table.Length == 3 && table.Get(1).Type == DataType.Number
+                                  && table.Get(2).Type == DataType.Number
+                                  && table.Get(3).Type == DataType.Number)
                 return new Vector3((float)table.Get(1).Number, (float)table.Get(2).Number, (float)table.Get(2).Number);
-            if (table.Length == 2)
+            if (table.Length == 2 && table.Get(1).Type == DataType.Number
+                                  && table.Get(2).Type == DataType.Number)
                 return new Vector3((float)table.Get(1).Number, (float)table.Get(2).Number, 0f);
-            if (table.Length == 1)
+            if (table.Length == 1 && table.Get(1).Type == DataType.Number)
                 return new Vector3((float)table.Get(1).Number, 0f, 0f);
+            if (table.Length == 0)
+                return new Vector3(0f, 0f, 0f);
             Debug.LogError($"Wrong table format for representing Vector3 : {v3Table.Table}");
             return Vector3.zero;
         }
