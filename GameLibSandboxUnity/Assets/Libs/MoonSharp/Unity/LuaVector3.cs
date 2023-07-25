@@ -15,7 +15,7 @@ namespace MoonSharp.UnityWrapper
     {
         private Vector3 _vector;
 
-        public static readonly LuaVector3 One = new LuaVector3(1f,1f,1f);
+        public static readonly LuaVector3 One = new LuaVector3(1f, 1f, 1f);
 
         public LuaVector3(float x = 0f, float y = 0f, float z = 0f)
         {
@@ -45,6 +45,40 @@ namespace MoonSharp.UnityWrapper
             return _vector.magnitude;
         }
 
+        public static LuaVector3 Lerp(LuaVector3 a, LuaVector3 b, float t)
+        {
+            t = Mathf.Clamp01(t);
+            return new LuaVector3(
+                a.x + (b.x - a.x) * t,
+                a.y + (b.y - a.y) * t,
+                a.z + (b.z - a.z) * t
+            );
+        }
+
+        public string ToString()
+        {
+            return _vector.ToString();
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is not LuaVector3 vector3)
+                return false;
+
+            float diff_x = this.x - vector3.x;
+            float diff_y = this.y - vector3.y;
+            float diff_z = this.z - vector3.z;
+            float sqrmag = diff_x * diff_x + diff_y * diff_y + diff_z * diff_z;
+            return sqrmag < Mathf.Epsilon * Mathf.Epsilon;
+        }
+
+        public static LuaVector3 operator +(LuaVector3 a, LuaVector3 b) { return new LuaVector3(a.x + b.x, a.y + b.y, a.z + b.z); }
+        public static LuaVector3 operator -(LuaVector3 a, LuaVector3 b) { return new LuaVector3(a.x - b.x, a.y - b.y, a.z - b.z); }
+        public static LuaVector3 operator -(LuaVector3 a) { return new LuaVector3(-a.x, -a.y, -a.z); }
+        public static LuaVector3 operator *(LuaVector3 a, float d) { return new LuaVector3(a.x * d, a.y * d, a.z * d); }
+        public static LuaVector3 operator *(float d, LuaVector3 a) { return new LuaVector3(a.x * d, a.y * d, a.z * d); }
+        public static LuaVector3 operator /(LuaVector3 a, float d) { return new LuaVector3(a.x / d, a.y / d, a.z / d); }
+
         [MoonSharpHidden]
         public Vector3 ToVector3()
         {
@@ -72,6 +106,9 @@ namespace MoonSharp.UnityWrapper
             script.DoString("Vector3.Left = Vector3(-1.0, 0.0, 0.0)");
             script.DoString("Vector3.Right = Vector3(1.0, 0.0, 0.0)");
             script.DoString("Vector3.Up = Vector3(0.0, 1.0, 0.0)");
+
+            // if you want to use Vector3 class name along with LuaVector3 for static methods calls then remap them to Vector3 table
+            script.DoString("Vector3.Lerp = LuaVector3.Lerp");
         }
     }
 
