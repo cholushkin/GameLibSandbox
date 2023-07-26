@@ -17,3 +17,6 @@
 [submodule "GameLibSandboxUnity/Assets/Libs/uimgui"]
 	path = GameLibSandboxUnity/Assets/Libs/uimgui
 	url = https://github.com/cholushkin/uimgui.git
+[submodule "GameLibSandboxUnity/Assets/Libs/umoonsharp"]
+	path = GameLibSandboxUnity/Assets/Libs/umoonsharp
+	url = https://github.com/cholushkin/umoonsharp.git
