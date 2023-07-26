@@ -1,47 +1,55 @@
 #define TEST_REGISTRATION_ERRORS_disabled
 
+using Qonsole;
 using UnityEngine;
 
-
-
-namespace Qonsole
+namespace Zombotron.Qonsole
 {
-
-    public static class ConsoleVariablesZombobox
-    {
-        //[ConsoleVariable("Zombobox.MaxZombies", "maxz", "Maximum amount of zombies possible")]
-        //public static int MaxZombies { get; set; } = 10;
-
-        //[ConsoleVariable("Zombobox.MinZombies", "minz", "Minimum amount of zombies possible")]
-        //public static int MinZombies { get; set; } = 1;
-
-    }
-
-    public static class ConsoleCommandsZombobox
+    // Represents real game domain 
+    public static class Zombotron
     {
         public enum Weapon
         {
             Gun,
             Shotgun,
-            Rifle
+            Rifle,
+            Sword,
+            Knife
         }
 
-        
+        // Zombie class is also part of domain
+
+    }
+
+    // Console Variables
+    public static class ConsoleVariables
+    {
+        //[ConsoleVariable("Zombotron.MaxZombies", "maxz", "Maximum amount of zombies possible")]
+        //public static int MaxZombies { get; set; } = 10;
+
+        //[ConsoleVariable("Zombotron.MinZombies", "minz", "Minimum amount of zombies possible")]
+        //public static int MinZombies { get; set; } = 1;
+
+    }
+
+    // Console commands
+    public static class ConsoleCommands
+    {
         // Example of: no description
         // Example of: passing enum (in lua: Weapon.Gun )
-        [ConsoleMethod("Zombobox.PrintWeapon", "weapon", null), UnityEngine.Scripting.Preserve]
-        public static void PrintWeapon(Weapon w)
+        [ConsoleMethod("Zombotron.PrintWeapon", "weapon", null), UnityEngine.Scripting.Preserve]
+        public static void PrintWeapon(Zombotron.Weapon w)
         {
-            if(w == Weapon.Gun)
+            if (w == Zombotron.Weapon.Gun)
                 Debug.Log("gun");
-            else if (w == Weapon.Shotgun)
+            else if (w == Zombotron.Weapon.Shotgun)
                 Debug.Log("shotgun");
-            else if (w == Weapon.Rifle)
+            else if (w == Zombotron.Weapon.Rifle)
                 Debug.Log("rifle");
         }
 
 
-        [ConsoleMethod("Zombobox.Hit", "hit", "Hit the zombie")]
+        [ConsoleMethod("Zombotron.Hit", "hit", "Hit the zombie")]
         // Example of: default value
         public static void HitZombie(string name, float hitPoint = 1f)
         {
@@ -49,13 +57,14 @@ namespace Qonsole
             var zombie = FindZombie(name);
             if (zombie == null)
             {
+                Debug.LogError($"Can't find zombie with the name '{name}'");
                 return;
             }
             zombie.Health -= hitPoint;
         }
 
 
-        [ConsoleMethod("Zombobox.CreateZombie", "cz", "Create zombie")]
+        [ConsoleMethod("Zombotron.CreateZombie", "cz", "Create zombie")]
         // Example of: default value
         public static void CreateZombie(string name, Vector3 pos, float health = 10f)
         {
@@ -66,13 +75,13 @@ namespace Qonsole
         }
 
 
-        [ConsoleMethod("Zombobox.SetColor", "setcolor", "Set color to zombie")]
+        [ConsoleMethod("Zombotron.SetColor", "setcolor", "Set color to zombie")]
         public static void SetColor(string name, Color clr)
         {
 
         }
 
-        [ConsoleMethod("Zombobox.PrintState", "printz", "Print the state of zombobox")]
+        [ConsoleMethod("Zombotron.PrintState", "printz", "Print the state of zombobox")]
         public static void PrintZomboboxState()
         {
             //Debug.Log($"MaxZombies={ConsoleVariablesZombobox.MaxZombies}");
