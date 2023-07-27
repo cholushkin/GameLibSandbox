@@ -24,8 +24,8 @@ namespace Zombotron.Qonsole
     // Console Variables
     public static class ConsoleVariables
     {
-        //[ConsoleVariable("Zombotron.MaxZombies", "maxz", "Maximum amount of zombies possible")]
-        //public static int MaxZombies { get; set; } = 10;
+        [ConsoleVariable("Zombotron.MaxZombies", "maxz", "Maximum amount of zombies possible")]
+        public static int MaxZombies { get; set; } = 10;
 
         //[ConsoleVariable("Zombotron.MinZombies", "minz", "Minimum amount of zombies possible")]
         //public static int MinZombies { get; set; } = 1;
@@ -53,14 +53,14 @@ namespace Zombotron.Qonsole
         // Example of: default value
         public static void HitZombie(string name, float hitPoint = 1f)
         {
-            Debug.Log($"Hit zombie {name} by {hitPoint} hit points");
-            var zombie = FindZombie(name);
+	        var zombie = FindZombie(name);
             if (zombie == null)
             {
                 Debug.LogError($"Can't find zombie with the name '{name}'");
                 return;
             }
-            zombie.Health -= hitPoint;
+            Debug.Log($"Hit zombie {name} by {hitPoint} hit points");
+			zombie.Health -= hitPoint;
         }
 
 
@@ -78,14 +78,23 @@ namespace Zombotron.Qonsole
         [ConsoleMethod("Zombotron.SetColor", "setcolor", "Set color to zombie")]
         public static void SetColor(string name, Color clr)
         {
-
-        }
+	        var zombie = FindZombie(name);
+	        if (zombie == null)
+	        {
+		        Debug.LogError($"Can't find zombie with the name '{name}'");
+		        return;
+	        }
+	        Debug.Log($"Set color {clr.ToString()} to zombie '{name}'");
+		}
 
         [ConsoleMethod("Zombotron.PrintState", "printz", "Print the state of zombobox")]
-        public static void PrintZomboboxState()
+        public static void PrintZombotronState()
         {
-            //Debug.Log($"MaxZombies={ConsoleVariablesZombobox.MaxZombies}");
-            //Debug.Log($"MinZombies={ConsoleVariablesZombobox.MinZombies}");
+	        var zombies = Object.FindObjectsByType<Zombie>(FindObjectsSortMode.None);
+	        if (zombies.Length != 0)
+	        {
+		        Debug.Log($"There are {zombies.Length} zombies");
+	        }
         }
 
         private static Zombie FindZombie(string name)
