@@ -199,6 +199,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1667189582909058163, guid: 34f3626aa587a624a89063438950e867,
         type: 3}
+      propertyPath: RunAutoexec
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667189582909058163, guid: 34f3626aa587a624a89063438950e867,
+        type: 3}
       propertyPath: LogChecker.Subsystem
       value: Gamelib.Qonsole
       objectReference: {fileID: 0}
