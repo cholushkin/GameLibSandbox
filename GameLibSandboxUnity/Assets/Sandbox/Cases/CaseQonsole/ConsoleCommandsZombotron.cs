@@ -49,7 +49,7 @@ namespace Zombotron.Qonsole
         }
 
 
-        [ConsoleMethod("Zombotron.Hit", "hit", "Hit the zombie")]
+        [ConsoleMethod("Zombotron.Zombie.Hit", "hit", "Hit the zombie")]
         // Example of: default value
         public static void HitZombie(string name, float hitPoint = 1f)
         {
@@ -64,7 +64,7 @@ namespace Zombotron.Qonsole
         }
 
 
-        [ConsoleMethod("Zombotron.CreateZombie", "cz", "Create zombie")]
+        [ConsoleMethod("Zombotron.Zombie.Create", "cz", "Create zombie")]
         // Example of: default value
         public static void CreateZombie(string name, Vector3 pos, float health = 10f)
         {
@@ -75,7 +75,7 @@ namespace Zombotron.Qonsole
         }
 
 
-        [ConsoleMethod("Zombotron.SetColor", "setcolor", "Set color to zombie")]
+        [ConsoleMethod("Zombotron.Zombie.SetColor", "setcolor", "Set color to zombie")]
         public static void SetColor(string name, Color clr)
         {
 	        var zombie = FindZombie(name);
@@ -87,7 +87,7 @@ namespace Zombotron.Qonsole
 	        Debug.Log($"Set color {clr.ToString()} to zombie '{name}'");
 		}
 
-        [ConsoleMethod("Zombotron.PrintState", "printz", "Print the state of zombobox")]
+        [ConsoleMethod("Zombotron.PrintState", "printz", "Print the state of zombotron")]
         public static void PrintZombotronState()
         {
 	        var zombies = Object.FindObjectsByType<Zombie>(FindObjectsSortMode.None);
