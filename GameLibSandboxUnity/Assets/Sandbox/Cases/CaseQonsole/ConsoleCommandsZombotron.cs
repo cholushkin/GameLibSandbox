@@ -27,8 +27,8 @@ namespace Zombotron.Qonsole
         [ConsoleVariable("Zombotron.MaxZombies", "maxz", "Maximum amount of zombies possible")]
         public static int MaxZombies { get; set; } = 10;
 
-        //[ConsoleVariable("Zombotron.MinZombies", "minz", "Minimum amount of zombies possible")]
-        //public static int MinZombies { get; set; } = 1;
+        [ConsoleVariable("Zombotron.MinZombies", "minz", "Minimum amount of zombies possible")]
+        public static int MinZombies { get; set; } = 4;
 
     }
 
