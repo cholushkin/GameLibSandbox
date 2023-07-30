@@ -136,6 +136,8 @@ GameObject:
   - component: {fileID: 175192596}
   - component: {fileID: 175192595}
   - component: {fileID: 175192597}
+  - component: {fileID: 175192598}
+  - component: {fileID: 175192599}
   m_Layer: 0
   m_Name: ExampleZombotron
   m_TagString: Untagged
@@ -272,6 +274,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Code: PrintTable(getmetatable(_G))
+--- !u!114 &175192598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175192588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a38879ee4f5147c4488730d706d0cd98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Code: 'print(zombotron.gravity)
+
+    zombotron.gravity = 11
+
+    print(zombotron.gravity)'
+--- !u!114 &175192599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175192588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a38879ee4f5147c4488730d706d0cd98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Code: 'print(gravity)
+
+    gravity = 11
+
+    print(gravity)'
 --- !u!1 &412246179
 GameObject:
   m_ObjectHideFlags: 0

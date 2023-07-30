@@ -17,8 +17,7 @@ namespace Zombotron.Qonsole
             Knife
         }
 
-        // Zombie class is also part of domain
-
+        // Note: Zombie class is also part of domain
     }
 
     // Console Variables
@@ -28,8 +27,10 @@ namespace Zombotron.Qonsole
         public static int MaxZombies { get; set; } = 10;
 
         [ConsoleVariable("Zombotron.MinZombies", "minz", "Minimum amount of zombies possible")]
-        public static int MinZombies { get; set; } = 4;
+        public static int MinZombies { get; set; } // zero by default
 
+        [ConsoleVariable("Zombotron.Gravity", "gravity", "Zombotron gravity")]
+        public static float Gravity { get; } = 9.8f;
     }
 
     // Console commands
