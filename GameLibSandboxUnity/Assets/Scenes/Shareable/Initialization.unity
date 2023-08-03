@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -67,9 +67,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -147,13 +144,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 672906657}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -13.760568, y: 5.631532, z: 12.074354}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &672906660
 MonoBehaviour:
@@ -177,12 +174,16 @@ MonoBehaviour:
     AddContextHash: 0
     AddContextSiblingIndex: 0
     AddComponentName: 0
-  SceneLoadingOrder:
-    ShareableScenes:
-    - {fileID: 102900000, guid: 4db021f3bc89274468b1c71ee37a4c6a, type: 3}
-    - {fileID: 102900000, guid: 933cf04aa52d32443a237f142c57574d, type: 3}
-    AdditiveScenes:
-    - {fileID: 102900000, guid: 20565e5ab98240646b01b3e4a75145a5, type: 3}
-    - {fileID: 102900000, guid: 4c8938c7e49cac94896d3b19f83999d1, type: 3}
-  DevSceneDependencies: {fileID: 11400000, guid: 475c7af045ceb0b449b7852a25222922,
-    type: 2}
+  LoadingSequence:
+    Additives:
+    - System
+    - Debug
+    - Sandbox
+    - UnitTest
+    ActiveScene: Sandbox
+  DevSceneConfig: {fileID: 11400000, guid: b142930c6431f2c488449b6656a9e19d, type: 2}
+--- !u!1660057539 &9223372036854775807
+SceneRoots:
+  m_ObjectHideFlags: 0
+  m_Roots:
+  - {fileID: 672906659}

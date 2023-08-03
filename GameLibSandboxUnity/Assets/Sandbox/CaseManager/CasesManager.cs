@@ -28,7 +28,7 @@ public class CasesManager : MonoBehaviour
         var oldCurScene = _currentScene;
         _currentScene = CaseScenes[CurrentCaseIndex];
 
-        SceneLoader.Instance.Replace(_currentScene, oldCurScene, true);
+        //SceneLoader.Instance.Replace(_currentScene, oldCurScene, true);
     }
 
     [Button]
