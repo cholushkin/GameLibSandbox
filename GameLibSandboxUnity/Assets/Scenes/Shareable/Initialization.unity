@@ -130,6 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 672906659}
   - component: {fileID: 672906660}
+  - component: {fileID: 672906661}
   m_Layer: 0
   m_Name: SceneLoader
   m_TagString: Untagged
@@ -144,13 +145,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 672906657}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -13.760568, y: 5.631532, z: 12.074354}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &672906660
 MonoBehaviour:
@@ -164,26 +165,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8649716a494877542b8d7da13e0947c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LogChecker:
-    CheckerLevel: 0
-    Subsystem: 
-    Context: {fileID: 0}
-    AddSubsystem: 0
-    AddContextPath: 0
-    AddContextCoordinate: 0
-    AddContextHash: 0
-    AddContextSiblingIndex: 0
-    AddComponentName: 0
-  LoadingSequence:
-    Additives:
-    - System
-    - Debug
-    - Sandbox
-    - UnitTest
-    ActiveScene: Sandbox
+  LoadingSequence: Initialization
   DevSceneConfig: {fileID: 11400000, guid: b142930c6431f2c488449b6656a9e19d, type: 2}
---- !u!1660057539 &9223372036854775807
-SceneRoots:
+--- !u!114 &672906661
+MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_Roots:
-  - {fileID: 672906659}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672906657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d24b5faf75c9ac4f94e2569bcad1132, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneLoader: {fileID: 672906660}

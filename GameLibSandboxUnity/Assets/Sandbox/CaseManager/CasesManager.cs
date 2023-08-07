@@ -1,78 +1,38 @@
-﻿using GameLib.Log;
-using NaughtyAttributes;
-using UnityEditor;
+﻿using System.Linq;
+using GameLib.Log;
+using NUnit.Framework;
 using UnityEngine;
-using UnityEngine.InputSystem.HID;
-using UnityEngine.SceneManagement;
 
 public class CasesManager : MonoBehaviour
 {
-    public int CurrentCaseIndex;
-    public SceneAsset[] CaseScenes;
-    private SceneAsset _currentScene;
+    public SceneDependenciesConfig SceneDependenciesConfig;
+    public SceneLoader SceneLoader;
     public LogChecker Log;
+    private string _currentSceneName;
+    private string _previousSceneName;
 
-    void Start()
+	void Start()
     {
-        RunCase(CurrentCaseIndex);
+        RunCase(GetNextSceneName());
     }
 
-    public void RunCase(int caseIndex = -1)
+    public void RunCase(string sceneName)
     {
-        // Update CurrentCaseIndex
-        if (caseIndex == -1)
-            caseIndex = CurrentCaseIndex;
-        CurrentCaseIndex = caseIndex;
-
-        // Destroy old scene
-        var oldCurScene = _currentScene;
-        _currentScene = CaseScenes[CurrentCaseIndex];
-
-        //SceneLoader.Instance.Replace(_currentScene, oldCurScene, true);
+	    _previousSceneName = _currentSceneName;
+		SceneLoader.LoadSequence(sceneName);
     }
 
-    [Button]
-    void test()
+    public string GetNextSceneName()
     {
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName("ProBuilderRndShapes"));
-        print(SceneManager.GetActiveScene().name);
+		// If _currentSceneName is not initialized yet then return the first scene from SceneDependenciesConfig
+		if (string.IsNullOrEmpty(_currentSceneName))
+		    return SceneDependenciesConfig.AllSceneDependencies[0].DevSceneOrWildcard;
+
+	    int index = SceneDependenciesConfig.AllSceneDependencies.Select((p, idx) => new { p, idx })
+		    .FirstOrDefault(x => x.p.DevSceneOrWildcard == _currentSceneName)?.idx ?? -1;
+        Assert.IsTrue(index != -1);
+
+		var nextIndex = (index + 1) % SceneDependenciesConfig.AllSceneDependencies.Length;
+		return SceneDependenciesConfig.AllSceneDependencies[nextIndex].DevSceneOrWildcard;
     }
-
-    //public string GetNextCaseName()
-    //{
-    //    var nextIndex = (CurrentCaseIndex + 1) % CasesHolder.Order.Length;
-    //    return CasesHolder.Order[nextIndex].Name;
-    //}
-
-    //public string GetPrevCaseName()
-    //{
-    //    var prevIndex = (CurrentCaseIndex - 1);
-    //    if (prevIndex < 0)
-    //        prevIndex = CasesHolder.Order.Length - 1;
-    //    return CasesHolder.Order[prevIndex].Name;
-    //}
-
-    //public string GetCurrentCaseName()
-    //{
-    //    return CasesHolder.Order[CurrentCaseIndex].Name;
-    //}
-
-    public void IncIndex()
-    {
-        CurrentCaseIndex = (CurrentCaseIndex + 1) % GetCasesCount();
-    }
-
-    public void DecIndex()
-    {
-        CurrentCaseIndex = (CurrentCaseIndex - 1);
-        if (CurrentCaseIndex < 0)
-            CurrentCaseIndex = GetCasesCount() - 1;
-    }
-
-    public int GetCasesCount()
-    {
-        return CaseScenes.Length;
-    }
-
-
 }
