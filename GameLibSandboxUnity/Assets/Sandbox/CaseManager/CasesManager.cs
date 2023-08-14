@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using GameLib.Log;
-using NUnit.Framework;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class CasesManager : MonoBehaviour
 {

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using NUnit.Framework;
 using UnityEngine;
 
 public class PicklesLayout : MonoBehaviour
@@ -7,18 +8,31 @@ public class PicklesLayout : MonoBehaviour
     public float boundaryPadding = 10f;
     public bool UseSafeArea;
     public Canvas Canvas;
+    private Rect _activeArea;
 
     void Awake()
     {
-        var canvasRect = Canvas.GetComponent<RectTransform>();
-        foreach (var pickle in Pickles)
-            pickle.Init(canvasRect, UseSafeArea);
+	    _activeArea = CalculateActiveRect();
+		var canvasRect = Canvas.GetComponent<RectTransform>();
+		foreach (var pickle in Pickles)
+		{
+			pickle.Init(canvasRect, UseSafeArea);
+		}
+
+		FirstRound();
+
     }
 
     // On the first round we decide locations for each pickle based on their settings 
     private void FirstRound()
     {
-        
+	    foreach (var pickle in Pickles)
+	    {
+		    var pos = pickle.CalculateTargetPosition(_activeArea);
+		    pickle.RectTransform.anchoredPosition = pos;
+
+	    }
+
     }
 
     // On the second round we use "physics" to push them so they can take right position
@@ -69,7 +83,7 @@ public class PicklesLayout : MonoBehaviour
 
     private Vector2 CalculateSeparationDelta(RectTransform rect1, RectTransform rect2)
     {
-        Rect r1 = rect1.rect;
+	    Rect r1 = rect1.rect;
         Rect r2 = rect2.rect;
 
         float xSeparation = Mathf.Max(r1.xMax - r2.xMin, r2.xMax - r1.xMin);
@@ -77,5 +91,36 @@ public class PicklesLayout : MonoBehaviour
 
         Vector2 newDelta = new Vector2(xSeparation, ySeparation);
         return newDelta;
+    }
+
+    private Rect CalculateActiveRect()
+    {
+	    Assert.IsNotNull(Canvas);
+	    var canvasRect = Canvas.GetComponent<RectTransform>();
+		Vector2 canvasRawSize = canvasRect.rect.size;
+
+		// Calculate safe area bounds
+		float canvasWidth = canvasRawSize.x;
+		float canvasHeight = canvasRawSize.y;
+
+		float canvasBottomLeftX = 0f;
+		float canvasBottomLeftY = 0f;
+
+		if (UseSafeArea)
+		{
+#if UNITY_2017_2_OR_NEWER && (UNITY_EDITOR || UNITY_ANDROID || UNITY_IOS)
+			Rect safeArea = Screen.safeArea;
+
+			int screenWidth = Screen.width;
+			int screenHeight = Screen.height;
+
+			canvasWidth *= safeArea.width / screenWidth;
+			canvasHeight *= safeArea.height / screenHeight;
+
+			canvasBottomLeftX = canvasRawSize.x * (safeArea.x / screenWidth);
+			canvasBottomLeftY = canvasRawSize.y * (safeArea.y / screenHeight);
+#endif
+		}
+		return new Rect(canvasBottomLeftX, canvasBottomLeftY, canvasWidth, canvasHeight);
     }
 }
