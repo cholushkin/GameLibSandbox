@@ -23,3 +23,5 @@ GameLibSandboxUnity/Assembly-CSharp-firstpass.csproj
 /GameLibSandboxUnity/UImGui.Editor.csproj
 /GameLibSandboxUnity/UImGui.csproj
 /GameLibSandboxUnity/.vs
+/GameLibSandboxUnity/IngameDebugConsole.Editor.csproj
+/GameLibSandboxUnity/IngameDebugConsole.Runtime.csproj
