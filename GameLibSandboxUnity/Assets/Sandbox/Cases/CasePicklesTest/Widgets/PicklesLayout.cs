@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PicklesLayout : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class PicklesLayout : MonoBehaviour
     public float boundaryPadding = 10f;
     public bool UseSafeArea;
     public Canvas Canvas;
+    public Image PickleGhost;
     private Rect _activeArea;
 
     void Awake()
@@ -16,7 +18,7 @@ public class PicklesLayout : MonoBehaviour
 		var canvasRect = Canvas.GetComponent<RectTransform>();
 		foreach (var pickle in Pickles)
 		{
-			pickle.Init(canvasRect, UseSafeArea);
+			pickle.Init(canvasRect, _activeArea, UseSafeArea, PickleGhost);
 		}
 
 		FirstRound();
@@ -29,7 +31,7 @@ public class PicklesLayout : MonoBehaviour
 	    foreach (var pickle in Pickles)
 	    {
 		    var pos = pickle.CalculateTargetPosition(_activeArea);
-		    pickle.RectTransform.anchoredPosition = pos;
+		   // pickle.RectTransform.anchoredPosition = pos;
 
 	    }
 
