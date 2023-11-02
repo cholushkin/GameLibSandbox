@@ -1,26 +1,42 @@
 using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PicklesLayout : MonoBehaviour
 {
-    public List<PickleBase> Pickles = new List<PickleBase>();
-    public float boundaryPadding = 10f;
+    public PickleBase[] Pickles;
     public bool UseSafeArea;
     public Canvas Canvas;
+    public Image PickleGhost;
     private Rect _activeArea;
+    private bool _initialized;
+
 
     void Awake()
     {
-	    _activeArea = CalculateActiveRect();
-		var canvasRect = Canvas.GetComponent<RectTransform>();
+        _activeArea = CalculateActiveRect();
+        var canvasRect = Canvas.GetComponent<RectTransform>();
+
+        Pickles = GetComponentsInChildren<PickleBase>();
 		foreach (var pickle in Pickles)
 		{
-			pickle.Init(canvasRect, UseSafeArea);
+			pickle.Init(canvasRect, _activeArea, PickleGhost);
 		}
 
-		FirstRound();
+        _initialized = true;
 
+    }
+
+    private void OnRectTransformDimensionsChange()
+    {
+        if(!_initialized)
+            return;
+
+        var canvasRect = Canvas.GetComponent<RectTransform>();
+        _activeArea = CalculateActiveRect();
+        foreach (var pickle in Pickles)
+            pickle.OnScreenChange(canvasRect, _activeArea);
     }
 
     // On the first round we decide locations for each pickle based on their settings 
@@ -28,8 +44,8 @@ public class PicklesLayout : MonoBehaviour
     {
 	    foreach (var pickle in Pickles)
 	    {
-		    var pos = pickle.CalculateTargetPosition(_activeArea);
-		    pickle.RectTransform.anchoredPosition = pos;
+		    //var pos = pickle.CalculateTargetPosition(_activeArea);
+		   // pickle.RectTransform.anchoredPosition = pos;
 
 	    }
 
@@ -47,9 +63,9 @@ public class PicklesLayout : MonoBehaviour
 
     private void Update2()
     {
-        for (int i = 0; i < Pickles.Count; i++)
+        for (int i = 0; i < Pickles.Length; i++)
         {
-            for (int j = i + 1; j < Pickles.Count; j++)
+            for (int j = i + 1; j < Pickles.Length; j++)
             {
                 if (RectsIntersect(Pickles[i].RectTransform, Pickles[j].RectTransform))
                 {
@@ -67,8 +83,8 @@ public class PicklesLayout : MonoBehaviour
             }
         }
 
-        foreach (var pickle in Pickles)
-            pickle.UpdatePosition();
+        //foreach (var pickle in Pickles)
+        //    pickle.UpdatePosition();
     }
 
    
