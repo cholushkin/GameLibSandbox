@@ -1,4 +1,3 @@
-using CGTespy.UI;
 using UnityEngine;
 
 public class PickleBase : MonoBehaviour
