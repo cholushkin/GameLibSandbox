@@ -1,21 +1,9 @@
 ﻿using Gamelib.DataStructures;
-using UnityEngine.Assertions;
+using NUnit.Framework;
 
-public class TestScenarioCircularBufferAll : TestScenario
+public class TestCircularBuffer
 {
-
-    public override void Execute()
-    {
-        TestOverwrite();
-        TestUnderwrite();
-        TestIncreaseCapacityWhenFull();
-        TestDecreaseCapacityWhenFull();
-        TestEnumerationWhenFull();
-        TestEnumerationWhenPartiallyFull();
-        TestEnumerationWhenEmpty();
-        TestRemoveAt();
-    }
-
+    [Test]
     public void TestOverwrite()
     {
         var buffer = new CircularBuffer<long>(3);
@@ -32,6 +20,7 @@ public class TestScenarioCircularBufferAll : TestScenario
         Assert.AreEqual(0, buffer.Count);
     }
 
+    [Test]
     public void TestUnderwrite()
     {
         var buffer = new CircularBuffer<long>(5);
@@ -45,6 +34,7 @@ public class TestScenarioCircularBufferAll : TestScenario
         Assert.AreEqual(0, buffer.Count);
     }
 
+    [Test]
     public void TestIncreaseCapacityWhenFull()
     {
         var buffer = new CircularBuffer<long>(3);
@@ -60,6 +50,7 @@ public class TestScenarioCircularBufferAll : TestScenario
         Assert.AreEqual(0, buffer.Count);
     }
 
+    [Test]
     public void TestDecreaseCapacityWhenFull()
     {
         var buffer = new CircularBuffer<long>(3);
@@ -74,6 +65,7 @@ public class TestScenarioCircularBufferAll : TestScenario
         Assert.AreEqual(0, buffer.Count);
     }
 
+    [Test]
     public void TestEnumerationWhenFull()
     {
         var buffer = new CircularBuffer<long>(3);
@@ -86,6 +78,7 @@ public class TestScenarioCircularBufferAll : TestScenario
         Assert.AreEqual(i, 3);
     }
 
+    [Test]
     public void TestEnumerationWhenPartiallyFull()
     {
         var buffer = new CircularBuffer<long>(3);
@@ -97,6 +90,7 @@ public class TestScenarioCircularBufferAll : TestScenario
         Assert.AreEqual(i, 2);
     }
 
+    [Test]
     public void TestEnumerationWhenEmpty()
     {
         var buffer = new CircularBuffer<long>(3);
@@ -104,6 +98,7 @@ public class TestScenarioCircularBufferAll : TestScenario
             Assert.IsTrue(false);
     }
 
+    [Test]
     public void TestRemoveAt()
     {
         var buffer = new CircularBuffer<long>(5);
@@ -131,6 +126,5 @@ public class TestScenarioCircularBufferAll : TestScenario
         Assert.AreEqual(2, buffer.Dequeue());
         Assert.AreEqual(4, buffer.Dequeue());
         Assert.AreEqual(0, buffer.Count);
-
     }
 }

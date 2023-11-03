@@ -7,6 +7,12 @@
       "dependencies": {},
       "hash": "8a8fa5a9659a6d63f196391c71e06c4286c8acd7"
     },
+    "com.egg.tinycolor": {
+      "version": "file:C:/Projects/EGG/TinyColor/UnityPort/TinyColor",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,
@@ -130,7 +136,7 @@
       }
     },
     "com.unity.test-framework": {
-      "version": "1.3.7",
+      "version": "1.3.9",
       "depth": 0,
       "source": "registry",
       "dependencies": {

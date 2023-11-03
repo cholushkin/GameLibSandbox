@@ -25,3 +25,13 @@ GameLibSandboxUnity/Assembly-CSharp-firstpass.csproj
 /GameLibSandboxUnity/.vs
 /GameLibSandboxUnity/IngameDebugConsole.Editor.csproj
 /GameLibSandboxUnity/IngameDebugConsole.Runtime.csproj
+/GameLibSandboxUnity/DOTween.Modules.csproj
+/GameLibSandboxUnity/Egg.TinyColor.Runtime.csproj
+/GameLibSandboxUnity/GameLib.csproj
+/GameLibSandboxUnity/MyExercise_1.csproj
+/GameLibSandboxUnity/MyExercise_1s.csproj
+/GameLibSandboxUnity/MyExercise_2.csproj
+/GameLibSandboxUnity/SandboxTests.csproj
+/GameLibSandboxUnity/Tests.csproj
+/GameLibSandboxUnity/Tests_1s.csproj
+/GameLibSandboxUnity/Tests_2.csproj
