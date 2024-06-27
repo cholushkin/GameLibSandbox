@@ -1,7 +1,0 @@
--- lua autoexec file starts on game start
-
-dofile('motd')
-
-print("Please type help() for the help")
-
-

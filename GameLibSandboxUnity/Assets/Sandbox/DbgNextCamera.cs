@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using GameLib.Dbg;
 using UnityEngine;
 
 public class DbgNextCamera : Pane

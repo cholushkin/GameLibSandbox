@@ -1,5 +1,4 @@
 ﻿using Gamelib.DataStructures;
-using IngameDebugConsole;
 using NUnit.Framework;
 
 public class TestCircularBuffer

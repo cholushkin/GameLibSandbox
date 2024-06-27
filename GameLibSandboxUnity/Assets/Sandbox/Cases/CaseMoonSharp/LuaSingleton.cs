@@ -1,4 +1,4 @@
-using Alg;
+using GameLib.Alg;
 using MoonSharp.Interpreter;
 using NaughtyAttributes;
 using UnityEngine;
