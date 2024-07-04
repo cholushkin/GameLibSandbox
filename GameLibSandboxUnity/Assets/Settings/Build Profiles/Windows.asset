@@ -21,8 +21,6 @@ MonoBehaviour:
   - m_enabled: 1
     m_path: Assets/Scenes/Sandbox.unity
   - m_enabled: 1
-    m_path: Assets/Scenes/UnitTest.unity
-  - m_enabled: 1
     m_path: Assets/Scenes/Shareable/Initialization.unity
   - m_enabled: 1
     m_path: Assets/Scenes/Shareable/System.unity
