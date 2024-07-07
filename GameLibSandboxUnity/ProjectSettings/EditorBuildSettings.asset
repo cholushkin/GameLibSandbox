@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Shareable/Debug.unity
     guid: 933cf04aa52d32443a237f142c57574d
   - enabled: 1
-    path: Assets/Scenes/Shareable/Initialization.unity
+    path: Assets/Scenes/Shareable/Main.unity
     guid: 6ccdd1f588f521d45a612cc766806d57
   - enabled: 1
     path: Assets/Scenes/Sandbox.unity

@@ -19,11 +19,9 @@ MonoBehaviour:
     rid: 4434296939836604416
   m_Scenes:
   - m_enabled: 1
+    m_path: Assets/Scenes/Shareable/Main.unity
+  - m_enabled: 1
     m_path: Assets/Scenes/Sandbox.unity
-  - m_enabled: 1
-    m_path: Assets/Scenes/Shareable/Initialization.unity
-  - m_enabled: 1
-    m_path: Assets/Scenes/Shareable/System.unity
   - m_enabled: 1
     m_path: Assets/Scenes/Shareable/Debug.unity
   m_ScriptingDefines: []

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae85409567c626440afc057193bf2bcb, type: 3}
+  m_Name: MainSceneLoaderSeqConfig
+  m_EditorClassIdentifier: 
+  Sequences:
+  - Name: main-standard
+    Additives:
+    - System
+    - Debug
+    - Sandbox
+    ActiveScene: Sandbox
+  - Name: main-no-debug
+    Additives:
+    - System
+    - Sandbox
+    ActiveScene: Sandbox
+  - Name: sandbox+unittest
+    Additives:
+    - System
+    - Debug
+    - Sandbox
+    ActiveScene: Sandbox
