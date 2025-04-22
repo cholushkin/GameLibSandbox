@@ -1,5 +1,8 @@
 ![logo](Images/repository-open-graph-gamelibsandbox.png)
 
+> [!WARNING]
+> This repository is no longer maintained or supported. All showcases are moved to separate repositories 
+
 # GameLibSandbox
 Sandbox for testing and experimenting with my different libraries:
   * GameLib (https://github.com/cholushkin/gamelib)
